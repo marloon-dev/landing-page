@@ -57,30 +57,96 @@ header p {
     margin: auto;
     text-shadow: 2px 2px 0px black;
 }
-nav {
-    font-family: var(--fonte-padrão);
-    background-color: var(--cor2);
-    padding: 1em;
-    text-align: center;
-    margin-top: 40px;
-    box-shadow: 2px 2px 40px black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
-nav a {
-    color: var(--cor5);
-    padding: 10px;
-    text-decoration: none;
-    font-weight: bold;
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
 }
-nav a:hover {
-    color: var(--cor4);
+
+.navbar {
+  position: relative;
+  padding: 15px 25px;
+  background:var(--cor5);
+  border-radius: 60px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px var(--cor4);
+  border: 0.5px solid var(--cor2);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  position: relative;
+}
+
+.navbar ul li {
+  position: relative;
+  margin: 0 10px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--cor1);
+  padding: 10px 20px;
+  display: block;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: var(--cor1);
+}
+
+/* Indicador animado */
+.indicator {
+  position: absolute;
+  height: 40px;
+  width: 100px;
+  background: linear-gradient(45deg, var(--cor1), var(--cor3);
+  border-radius: 30px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.3s;
+}
+
+/* Movimentação do indicador */
+.navbar ul li:nth-child(1):hover ~ .indicator {
+  left: 0;
+}
+
+.navbar ul li:nth-child(2):hover ~ .indicator {
+  left: 110px;
+}
+
+.navbar ul li:nth-child(3):hover ~ .indicator {
+  left: 230px;
+}
+
+.navbar ul li:nth-child(4):hover ~ .indicator {
+  left: 360px;
+}
+
+.navbar ul li:nth-child(5):hover ~ .indicator {
+  left: 480px;
 }
 main {
-    background-color: rgba(245, 245, 245, 0.585);
+    background-color: var(--cor0);
     padding: 2em;
     min-width: 300px;
     max-width: 1000px;
     margin: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--cor3);
     border-radius: 0px 0px 10px 10px;
 }
 man img {
